@@ -738,11 +738,17 @@ function Index() {
                 Ahmedabad.
               </p>
               <div className="mt-5 flex gap-2">
-                {[Facebook, Instagram, Youtube].map((Icon, i) => (
+                {[
+                  { Icon: Instagram, href: "https://www.instagram.com/aaradhya_classes/?hl=en", label: "Instagram" },
+                  { Icon: Facebook, href: "https://www.facebook.com/aaradhya.class/", label: "Facebook" },
+                  { Icon: Youtube, href: "https://www.youtube.com/c/AARADHYACLASSES", label: "YouTube" }
+                ].map(({ Icon, href, label }, i) => (
                   <a
                     key={i}
-                    href="#"
-                    aria-label="Social link"
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
                     className="grid h-9 w-9 place-items-center rounded-lg bg-background/10 transition-colors hover:bg-accent hover:text-accent-foreground"
                   >
                     <Icon className="h-4 w-4" />
